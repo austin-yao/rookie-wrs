@@ -72,7 +72,7 @@ def main():
         combined[['PF', 'Att']] = combined["Tm"].apply(fetch_value, df=team2023, year = i)
         dfs.append(combined)
     combined_df = pd.concat(dfs, ignore_index=True)
-    print(combined_df)
+    combined_df.to_csv('output.csv', index=False)
         
 
 main()
